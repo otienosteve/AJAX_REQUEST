@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX REQUEST</title>
+</head>
+<body id="bod">
+    <p>Get Data from the Server</p>
+    <button id="btn" name="mybtn">TOGGLE DARK MODE</button>
+    <div class="display">
+        
+    </div>
+</body>
+<style>
+    p{
+    color: blue;
+    font-family: "Helvetica";
+}
+#btn {
+    color:rgb(51, 5, 5);
+    font-weight: 200;
+    font-style: bold;
+    background:rgb(46, 104, 68);
+    border:0px solid black;
+    border-radius:60px;
+    cursor:pointer;
+}
+</style>
+<script>
+  
+
+    document.getElementById("btn").addEventListener("click", ()=>{
+        document.getElementById("bod").style.background="#000"
+        var req= new XMLHttpRequest();
+    req.open("GET","https://learnwebcode.github.io/json-example/animals-1.json")
+        req.onload=()=>{
+
+            console.log(req.responseText)
+        }
+        req.send();
+
+    
+    })
+</script>
+
+</html>
